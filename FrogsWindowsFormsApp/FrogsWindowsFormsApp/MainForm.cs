@@ -46,17 +46,18 @@ namespace FrogsWindowsFormsApp
                 }
             }
         }
+        private bool EndGame()
+        {
+            return rightPictureBox1.Location.X < emptyPictureBox.Location.X && rightPictureBox2.Location.X < emptyPictureBox.Location.X 
+                && rightPictureBox3.Location.X < emptyPictureBox.Location.X && rightPictureBox4.Location.X < emptyPictureBox.Location.X 
+                && emptyPictureBox.Location.X == 450;
+        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             WelcomeForm welcome = new WelcomeForm();
             welcome.ShowDialog();
             scoreLabel.Text = score.ToString();
-        }
-
-        private bool EndGame()
-        {
-            return rightPictureBox1.Location.X < emptyPictureBox.Location.X && rightPictureBox2.Location.X < emptyPictureBox.Location.X && rightPictureBox3.Location.X < emptyPictureBox.Location.X && rightPictureBox4.Location.X < emptyPictureBox.Location.X && emptyPictureBox.Location.X == 450;
         }
 
         private void правилаИгрыToolStripMenuItem_Click(object sender, EventArgs e)
